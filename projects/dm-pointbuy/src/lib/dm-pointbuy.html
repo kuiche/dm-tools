@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Pointbuy</h1>
+
+  <div class="d-flex p-2">
+    <div *ngFor="let stat of stats">
+
+      <div class="form-group dmt-stat-input">
+        <p>
+          <input type="number"
+            [formControl]="formControls.get(stat)"
+            min={{minStat}} max="{{maxStat}}"
+            class="pull-left" id="{{stat}}">
+        </p>
+        <label for="{{stat}}">{{ stat }} : modifier={{ getStatModifier(stat) }} : pointcost={{ statCosts[formControls.get(stat).value] }}</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex p-2">
+    <div class="mr-3 {{ getTotalPoints() > maxPoints ? 'border border-danger' : '' }}">
+      Total: {{ getTotalPoints() }}/{{ maxPoints }}
+    </div>
+    <div class="mr-3 {{ getGainedPoints() > maxPointsGainable ? 'border border-danger' : '' }}">
+      Gained: {{ getGainedPoints() }}/{{ maxPointsGainable }}
+    </div>
+  </div>
+</div>

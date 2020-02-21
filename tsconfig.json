@@ -17,6 +17,16 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "dm-pointbuy": [
+        "dist/dm-pointbuy",
+        "projects/dm-pointbuy/src/public-api"
+      ],
+      "dm-pointbuy/*": [
+        "dist/dm-pointbuy/*",
+        "projects/dm-pointbuy/src/lib/*"
+      ]
+    }
   }
 }

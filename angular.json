@@ -134,6 +134,41 @@
           }
         }
       }
+    },
+    "dm-pointbuy": {
+      "root": "projects/dm-pointbuy",
+      "sourceRoot": "projects/dm-pointbuy/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/dm-pointbuy/tsconfig.lib.json",
+            "project": "projects/dm-pointbuy/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/dm-pointbuy/src/test.ts",
+            "tsConfig": "projects/dm-pointbuy/tsconfig.spec.json",
+            "karmaConfig": "projects/dm-pointbuy/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/dm-pointbuy/tsconfig.lib.json",
+              "projects/dm-pointbuy/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "dm-tools"
